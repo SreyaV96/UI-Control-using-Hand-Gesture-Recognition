@@ -1,49 +1,9 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hand Gesture Slideshow</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        img { max-width: 80%; height: auto; }
-        #webcam { width: 50%; border: 2px solid black; }
-    </style>
-    <script>
-        let images = {{ images | tojson }};
-        
-        function updateImage(index) {
-            document.getElementById("slide").src = "/static/images/" + images[index];
-        }
-    
-        function listenForUpdates() {
-            fetch("/get_current_index")
-                .then(response => response.json())
-                .then(data => {
-                    updateImage(data.current_index);
-                    setTimeout(listenForUpdates, 1000); // Check for updates every second
-                });
-        }
-    
-        window.onload = function() {
-            listenForUpdates();
-        };
-    </script>
-    
-</head>
-<body>
-    <h1>Hand Gesture Controlled Slideshow</h1>
-    <img id="slide" src="/static/images/{{ images[current_index] }}" alt="Slideshow Image">
-    <h2>Webcam Feed</h2>
-    <img id="webcam" src="{{ url_for('video') }}" alt="Webcam Feed">
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hand Gesture Slideshow</title>
+    <title>Hand Gesture Controlled infographics</title>
     <style>
         body {
             text-align: center;
@@ -94,13 +54,13 @@
     </script>
 </head>
 <body>
-    <h1>Hand Gesture Controlled Slideshow</h1>
+    <h1>Hand Gesture Controlled Infographics</h1>
 
-    <!-- Webcam feed moved inside a new container -->
+    
     <div id="webcam-container">
         <img id="webcam" src="{{ url_for('video') }}" alt="Webcam Feed">
     </div>
 
     <img id="slide" src="/static/images/{{ images[current_index] }}" alt="Slideshow Image">
 </body>
-</html>
+</html> 

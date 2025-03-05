@@ -129,15 +129,3 @@ def get_current_index():
 if __name__ == '__main__':
     threading.Thread(target=slideshow, daemon=True).start()
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
