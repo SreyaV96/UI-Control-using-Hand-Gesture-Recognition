@@ -105,10 +105,10 @@ def generate_frames():
     cap.release()
 
 def slideshow():
-    """Auto-slideshow thread that waits 5 seconds before changing slides."""
+    """Auto-slideshow thread that waits 3 seconds before changing slides."""
     global current_index, paused, last_gesture_time
     while True:
-        if not paused and (time.time() - last_gesture_time > 5):  # Wait 5 seconds before switching
+        if not paused and (time.time() - last_gesture_time > 3):  # Wait 3 seconds before switching
             with index_lock:
                 current_index = (current_index + 1) % len(image_files)
             last_gesture_time = time.time()
